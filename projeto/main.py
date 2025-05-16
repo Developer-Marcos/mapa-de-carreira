@@ -45,7 +45,7 @@ elif opc == '2':
       sleep(2)
       
       perfil = quiz()
-      print('Agora as profissões serão definidas, espere um momento por favor\n')
+      print('Agora as profissões serão definidas, espere um momento por favor.\n')
       definir_profissoes(perfil=perfil)
 
       print("\n")
