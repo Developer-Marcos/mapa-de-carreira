@@ -1,7 +1,7 @@
 from os import system
 from time import sleep
 from usar_gemini import gerar_roadmap, definir_profissoes
-from outros import quiz
+from outros import quiz, sair
 
 system('cls')
 print('Bem vindo(a) ao Mapa de carreiras!')
@@ -16,8 +16,8 @@ ___
 
 while True:
       opc = input('Qual a sua opção? [1] ou [2]: ').strip()
-      if opc == "fim":
-             exit()
+      if opc == 'fim':
+            sair()
       elif opc in ['1', '2']:
             break  
       print('Por favor selecione um valor válido.')
@@ -31,7 +31,7 @@ if opc == '1':
       while True:
             profissao = input('Digite qual é a profissão: ').strip().lower()
             if profissao == 'fim':
-                  exit()
+                  sair()
             if profissao:
                   break
             print("Insira um valor válido por favor.")
@@ -53,7 +53,7 @@ elif opc == '2':
       while True:
             profissao = input("Se interessou por alguma? Escreva o nome dela aqui: ").strip().lower()
             if profissao == 'fim':
-                  exit()
+                  sair()
             if profissao:
                   break
             print("Insira um valor válido por favor.")

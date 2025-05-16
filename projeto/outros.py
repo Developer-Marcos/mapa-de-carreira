@@ -1,4 +1,12 @@
 from os import system
+import sys
+from time import sleep
+
+def sair():
+      system('cls')
+      print("Obrigado por usar o sistema!")
+      sleep(2)
+      sys.exit()
 
 def aprendizado():
       print("Como você prefere aprender algo novo?")
@@ -8,7 +16,7 @@ def aprendizado():
       while True:
             opc = input('Qual a sua opção? [1] ou [2]: ').strip()
             if opc == "fim":
-                  exit()
+                  sair()
             elif opc in ['1', '2']:
                   break  
             print('Por favor selecione um valor válido.')
@@ -31,7 +39,7 @@ def motivacao():
       while True:
             opc = input('Qual a sua opção? [1], [2], [3], [4], [5] ou "fim" para sair: ').strip().lower()
             if opc == 'fim':
-                  exit()
+                  sair()
             if opc in ['1', '2', '3', '4', '5']:
                   break
             print('Por favor selecione um valor válido.')
@@ -57,7 +65,7 @@ def volatilidade():
       while True:
             opc = input('Qual a sua opção? [1] ou [2]: ').strip()
             if opc == "fim":
-                  exit()
+                  sair()
             elif opc in ['1', '2']:
                   break  
             print('Por favor selecione um valor válido.')
@@ -77,7 +85,7 @@ def atividade():
       while True:
             opc = input('Qual a sua opção? [1] ou [2]: ').strip()
             if opc == "fim":
-                  exit()
+                  sair()
             elif opc in ['1', '2']:
                   break  
             print('Por favor selecione um valor válido.')
@@ -97,7 +105,7 @@ def preferencia_social():
       while True:
             opc = input('Qual a sua opção? [1] ou [2]: ').strip()
             if opc == "fim":
-                  exit()
+                  sair()
             elif opc in ['1', '2']:
                   break  
             print('Por favor selecione um valor válido.')
@@ -118,7 +126,7 @@ def ambiente():
       while True:
             opc = input('Qual a sua opção? [1], [2] ou [3] ou "fim" para sair: ').strip().lower()
             if opc == 'fim':
-                  exit()
+                  sair()
             if opc in ['1', '2', '3']:
                   break
             print('Por favor selecione um valor válido.')
