@@ -1,6 +1,7 @@
 from dotenv import load_dotenv
 import google.generativeai as genai
 import os
+import re
 
 load_dotenv()
 
@@ -20,12 +21,12 @@ def gerar_roadmap(profissao: str):
 
       os.system('cls')
       print(f'Roadmap para se tornar {profissao}: \n')
-      print(roadmap.text)
+      print(limpar_texto(roadmap.text))
 
 
 def definir_profissoes(perfil):
      buscar_profissoes = f"""Por favor, responda sem usar nenhuma formatação Markdown (como * por exemplo), como asteriscos, negrito ou itálico.
-Descubra 3 profissões que mais se encaixam com o seguinte perfil, apenas traga o nome delas em tópicos e fale o porque de cada uma. Seja organizado, sem comentarios e caracteres ou simbolos desnecessarios e resuma em até 2 linhas, com o nome em cima e as caracteristicas em baixo, separe-os com '-' ao pular a linha para a profissão seguinte: 
+Descubra 3 profissões que mais se encaixam com o seguinte perfil, apenas traga o nome delas em tópicos e fale o porque de cada uma. Seja organizado, sem comentarios e caracteres ou simbolos desnecessarios e resuma em até 2 linhas, com o nome em cima e as caracteristicas em baixo, separe-os com '-' ao pular a linha para a profissão seguinte e diversifique as areas, por exemplo, se vier alguma de tecnologia, nao recomende outra de tecnologia (programador e engenheiro de software). No final de cada profissão, explique o que ela faz em duas linhas no maximo: 
      {perfil}
      """
      profissoes = modelo.generate_content(buscar_profissoes)
@@ -34,3 +35,5 @@ Descubra 3 profissões que mais se encaixam com o seguinte perfil, apenas traga 
      print('Aqui está 3 profissões que mais combinam com o seu perfil:')
      print(profissoes.text)
 
+def limpar_texto(texto):
+    return re.sub(r'[*_~`]', '', texto)

@@ -5,28 +5,38 @@ from outros import quiz
 
 system('cls')
 print('Bem vindo(a) ao Mapa de carreiras!')
-print('Descubra como se tornar um profissional em qualquer campo..')
+print('Descubra como se tornar um profissional em qualquer campo.')
 
 print("""
 [1] Escolher profissão específica 
 [2] Descubra profissões que mais combinam com você com base no seu perfil
+___
+[FIM] Digite fim para finalizar o programa em qualquer momento
 """)
 
-opc = input('Qual a sua opção? [1] ou [2]: ').strip()
-while opc not in ['1', '2']:
-      print('Por favor selecione um valor válido.')
+while True:
       opc = input('Qual a sua opção? [1] ou [2]: ').strip()
+      if opc == "fim":
+             exit()
+      elif opc in ['1', '2']:
+            break  
+      print('Por favor selecione um valor válido.')
+
 
 if opc == '1':
       system('cls')
       print('Voce escolheu uma profissão específica.')
       print('O sistema irá criar um roadmap de como alcança-la.')
 
-      profissao = input('Digite qual é a profissão: ').strip()
-      while not profissao:
+      while True:
+            profissao = input('Digite qual é a profissão: ').strip().lower()
+            if profissao == 'fim':
+                  exit()
+            if profissao:
+                  break
             print("Insira um valor válido por favor.")
-            profissao = input('Digite qual é a profissão: ').strip()    
 
+      print('\nO sistema está criando o roadmap, aguarde por favor.')
       gerar_roadmap(profissao=profissao)
 
 elif opc == '2':
@@ -37,3 +47,16 @@ elif opc == '2':
       perfil = quiz()
       print('Agora as profissões serão definidas, espere um momento por favor\n')
       definir_profissoes(perfil=perfil)
+
+      print("\n")
+
+      while True:
+            profissao = input("Se interessou por alguma? Escreva o nome dela aqui: ").strip().lower()
+            if profissao == 'fim':
+                  exit()
+            if profissao:
+                  break
+            print("Insira um valor válido por favor.")
+
+      
+      gerar_roadmap(profissao=profissao)

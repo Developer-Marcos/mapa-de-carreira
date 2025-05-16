@@ -5,10 +5,13 @@ def aprendizado():
       print("[1] Na prática, colocando a mão na massa")
       print("[2] Estudando teorias e entendendo o contexto\n")
 
-      opc = input('Qual a sua opção? [1] ou [2]: ').strip()
-      while opc not in ['1', '2']:
-            print('Por favor selecione um valor válido.')
+      while True:
             opc = input('Qual a sua opção? [1] ou [2]: ').strip()
+            if opc == "fim":
+                  exit()
+            elif opc in ['1', '2']:
+                  break  
+            print('Por favor selecione um valor válido.')
 
       print('\n')
 
@@ -25,10 +28,13 @@ def motivacao():
       print("[4] Criar coisas novas")
       print("[5] Fazer descobertas\n")
 
-      opc = input('Qual a sua opção? [1], [2], [3], [4], [5]: ').strip()
-      while opc not in ['1', '2', '3', '4', '5']:
+      while True:
+            opc = input('Qual a sua opção? [1], [2], [3], [4], [5] ou "fim" para sair: ').strip().lower()
+            if opc == 'fim':
+                  exit()
+            if opc in ['1', '2', '3', '4', '5']:
+                  break
             print('Por favor selecione um valor válido.')
-            opc = input('Qual a sua opção? [1], [2], [3], [4], [5]: ').strip()
 
       print('\n')
 
@@ -48,10 +54,13 @@ def volatilidade():
       print('[1] Trabalhos estáveis, onde cada dia é previsivel')
       print('[2] Trabalhos dinamicos, todo dia é um novo desafio\n')
 
-      opc = input('Qual a sua opção? [1] ou [2]: ').strip()
-      while opc not in ['1', '2']:
-            print('Por favor selecione um valor válido.')
+      while True:
             opc = input('Qual a sua opção? [1] ou [2]: ').strip()
+            if opc == "fim":
+                  exit()
+            elif opc in ['1', '2']:
+                  break  
+            print('Por favor selecione um valor válido.')
       
       print('\n')
 
@@ -65,10 +74,13 @@ def atividade():
       print('[1] Atividades criativas, que exigem reflexão e originalidade')
       print('[2] Atividades técnicas, com processos claros e estruturados\n')
 
-      opc = input('Qual a sua opção? [1] ou [2]: ').strip()
-      while opc not in ['1', '2']:
-            print('Por favor selecione um valor válido.')
+      while True:
             opc = input('Qual a sua opção? [1] ou [2]: ').strip()
+            if opc == "fim":
+                  exit()
+            elif opc in ['1', '2']:
+                  break  
+            print('Por favor selecione um valor válido.')
       
       print('\n')      
 
@@ -82,10 +94,13 @@ def preferencia_social():
       print('[1] Um lugar com muitas pessoas, uma equipe talvez')
       print('[2] Gosto de trabalhar sozinho e por minha autonomia\n')
 
-      opc = input('Qual a sua opção? [1] ou [2]: ').strip()
-      while opc not in ['1', '2']:
-            print('Por favor selecione um valor válido.')
+      while True:
             opc = input('Qual a sua opção? [1] ou [2]: ').strip()
+            if opc == "fim":
+                  exit()
+            elif opc in ['1', '2']:
+                  break  
+            print('Por favor selecione um valor válido.')
 
       print('\n')
 
@@ -100,10 +115,14 @@ def ambiente():
       print('[2] Em casa, com conforto, flexibilidade e autonomia para gerenciar meu tempo')
       print('[3] Ao ar livre, em contato direto com ambientes naturais, pessoas ou objetos físicos')
 
-      opc = input('Qual a sua opção? [1], [2] ou [3]: ').strip()
-      while opc not in ['1', '2', '3']:
+      while True:
+            opc = input('Qual a sua opção? [1], [2] ou [3] ou "fim" para sair: ').strip().lower()
+            if opc == 'fim':
+                  exit()
+            if opc in ['1', '2', '3']:
+                  break
             print('Por favor selecione um valor válido.')
-            opc = input('Qual a sua opção? [1], [2] ou [3]: ').strip()
+
 
       if opc == '1':
             return 'Prefere ambientes organizados e profissionais, como escritórios'
@@ -117,7 +136,7 @@ def quiz():
       perfil = {
             'estilo_de_aprendizado' : '',
             'motivacao' : '',
-            'tipo_de_volatidade': '',
+            'tipo_de_volatilidade': '',
             'tipo_de_atividade': '',
             'preferencia_social': '',
             'ambiente_trabalho': ''
