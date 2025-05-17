@@ -51,4 +51,7 @@ Insira o nome de **qualquer profissão existente** e será gerado um <i>roadmap<
 
 ###### Tudo isso feito apenas em python e se conectando ao API do Gemini.
 
+---
+
+![video_de_exemplo]mapa_de_carreira.gif
 
