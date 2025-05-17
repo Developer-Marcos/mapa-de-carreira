@@ -1,9 +1,10 @@
 from os import system
 from time import sleep
 from usar_gemini import gerar_roadmap, definir_profissoes
-from outros import quiz, sair
+from outros import quiz, sair, limpar_tela, salvar_roadmap
 
-system('cls')
+
+limpar_tela()
 print('Bem vindo(a) ao Mapa de carreiras!')
 print('Descubra como se tornar um profissional em qualquer campo.')
 
@@ -15,7 +16,7 @@ ___
 """)
 
 while True:
-      opc = input('Qual a sua opção? [1] ou [2]: ').strip()
+      opc = input('Qual a sua opção? [1] ou [2]: ').strip().lower()
       if opc == 'fim':
             sair()
       elif opc in ['1', '2']:
@@ -24,7 +25,7 @@ while True:
 
 
 if opc == '1':
-      system('cls')
+      limpar_tela()
       print('Voce escolheu uma profissão específica.')
       print('O sistema irá criar um roadmap de como alcança-la.')
 
@@ -37,10 +38,13 @@ if opc == '1':
             print("Insira um valor válido por favor.")
 
       print('\nO sistema está criando o roadmap, aguarde por favor.')
-      gerar_roadmap(profissao=profissao)
+
+      roadmap_completo = gerar_roadmap(profissao=profissao)
+      print(roadmap_completo)
+      salvar_roadmap(roadmap=roadmap_completo, profissao=profissao)
 
 elif opc == '2':
-      system('cls')
+      limpar_tela()
       print('Será feito um quiz para saber 3 profissões que combinam com o seu perfil.\n')
       sleep(2)
       
@@ -58,5 +62,6 @@ elif opc == '2':
                   break
             print("Insira um valor válido por favor.")
 
-      
-      gerar_roadmap(profissao=profissao)
+      roadmap_completo = gerar_roadmap(profissao=profissao)
+      print(roadmap_completo)
+      salvar_roadmap(roadmap=roadmap_completo, profissao=profissao)

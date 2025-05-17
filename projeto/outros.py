@@ -1,12 +1,33 @@
 from os import system
 import sys
 from time import sleep
+import platform
+
+
+def limpar_tela():
+      system('cls' if platform.system() == 'Windows' else 'clear')
 
 def sair():
-      system('cls')
+      limpar_tela()
       print("Obrigado por usar o sistema!")
       sleep(2)
       sys.exit()
+
+def salvar_roadmap(roadmap, profissao):
+      while True:
+            salvar = input('Deseja salvar o roadmap em um arquivo de texto? [S/N]: ').upper()
+            if salvar in ['S', 'N']:
+                  break
+            print('Por favor escreva apenas S ou N.')
+      
+      if salvar == 'S':
+            nome_arquivo = f"roadmap_{profissao.replace(' ', '_')}.txt"
+            with open(nome_arquivo, 'w', encoding='utf-8') as f:
+                  f.write(roadmap)
+            print(f'Arquivo salvo como {nome_arquivo}')
+      
+      elif salvar == 'N':
+            sair()
 
 def aprendizado():
       print("Como você prefere aprender algo novo?")
@@ -14,7 +35,7 @@ def aprendizado():
       print("[2] Estudando teorias e entendendo o contexto\n")
 
       while True:
-            opc = input('Qual a sua opção? [1] ou [2]: ').strip()
+            opc = input('Qual a sua opção? [1] ou [2]: ').strip().lower()
             if opc == "fim":
                   sair()
             elif opc in ['1', '2']:
@@ -63,7 +84,7 @@ def volatilidade():
       print('[2] Trabalhos dinamicos, todo dia é um novo desafio\n')
 
       while True:
-            opc = input('Qual a sua opção? [1] ou [2]: ').strip()
+            opc = input('Qual a sua opção? [1] ou [2]: ').strip().lower()
             if opc == "fim":
                   sair()
             elif opc in ['1', '2']:
@@ -83,7 +104,7 @@ def atividade():
       print('[2] Atividades técnicas, com processos claros e estruturados\n')
 
       while True:
-            opc = input('Qual a sua opção? [1] ou [2]: ').strip()
+            opc = input('Qual a sua opção? [1] ou [2]: ').strip().lower()
             if opc == "fim":
                   sair()
             elif opc in ['1', '2']:
@@ -103,7 +124,7 @@ def preferencia_social():
       print('[2] Gosto de trabalhar sozinho e por minha autonomia\n')
 
       while True:
-            opc = input('Qual a sua opção? [1] ou [2]: ').strip()
+            opc = input('Qual a sua opção? [1] ou [2]: ').strip().lower()
             if opc == "fim":
                   sair()
             elif opc in ['1', '2']:
@@ -151,17 +172,17 @@ def quiz():
             }
             
       perfil['estilo_de_aprendizado'] = aprendizado()
-      system('cls')
+      limpar_tela()
       perfil['motivacao'] = motivacao()
-      system('cls')
+      limpar_tela()
       perfil['tipo_de_volatilidade'] = volatilidade()
-      system('cls')
+      limpar_tela()
       perfil['tipo_de_atividade'] = atividade()
-      system('cls')
+      limpar_tela()
       perfil['preferencia_social'] = preferencia_social()
-      system('cls')
+      limpar_tela()
       perfil['ambiente_trabalho'] = ambiente()
-      system('cls')
+      limpar_tela()
 
       descricao_perfil = f"""
 Perfil do usuário:
