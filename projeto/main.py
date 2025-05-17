@@ -2,6 +2,8 @@
 # GEMINI_API_KEY=sua_API_key -> no arquivo .env
 # Execute esse arquivo para iniciar
 
+# Em caso de duvidas, acesse o "como_usar.txt"
+
 from time import sleep
 from usar_gemini import gerar_roadmap, definir_profissoes
 from outros import quiz, sair, limpar_tela, salvar_roadmap
