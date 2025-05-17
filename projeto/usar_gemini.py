@@ -1,4 +1,4 @@
-from dotenv import load_dotenv
+from dotenv import load_dotenv # biblioteca que permite o python usar a API KEY no .env
 import google.generativeai as genai
 import os
 import re
