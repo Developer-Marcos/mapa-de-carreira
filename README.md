@@ -53,5 +53,5 @@ Insira o nome de **qualquer profissão existente** e será gerado um <i>roadmap<
 
 ---
 
-![video_de_exemplo](mapa_de_carreira.gif)
+![video_de_exemplo](mapa-de-carreira.gif)
 
