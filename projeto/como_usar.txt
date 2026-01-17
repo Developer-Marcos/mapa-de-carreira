@@ -1,0 +1,28 @@
+Como usar o Criador de Roadmaps com IA
+--------
+
+Instalação:
+1. Clone este repositório:  
+   git clone https://github.com/Developer-Marcos/mapa-de-carreira.git
+   
+3. Instale as dependências:  
+   pip install google.generativeai | Utilizar o Gemini
+   pip install dotenv | Permite o python usar a API KEY para se conectar ao Gemini
+   
+-----
+
+Configure a API:
+
+1. Vá até o arquivo .env (já criado dentro do projeto)
+2. No campo "GEMINI_API_KEY=sua_API_KEY" substitua "sua_API_KEY" pela sua chave de API válida.
+
+-----
+
+Inicie o programa:
+ - Na pasta "Projeto" execute o "main.py"
+
+-----
+Em caso de error:
+- Verifique se a chave da API está correta.
+- Mova o .env para dentro da pasta "projeto"
+- Confira se as dependências estão instaladas.
